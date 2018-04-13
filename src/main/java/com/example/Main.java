@@ -35,6 +35,7 @@ import java.util.ArrayList;
 import java.util.Map;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.*;
 
 @Controller
 @SpringBootApplication
@@ -59,12 +60,12 @@ public class Main {
   public ResponseEntity<?> hello() {
     return new ResponseEntity<>("Este es el segundo parcial practico de arem", HttpStatus.ACCEPTED);
   }
-  /*
+  
   @RequestMapping("/cuadrado")
-  public ResponseEntity<?> cuadrado(RequestParam ("valor") int valor ) {
-    return new ResponseEntity<>(new square(valor),HtppStatus.ACCEPTED);
+  public ResponseEntity<?> cuadrado(@RequestParam("valor") int valor ) {
+    return new ResponseEntity<>(new square(valor),HttpStatus.ACCEPTED);
   }
-    */
+  
 
   @RequestMapping("/db")
   String db(Map<String, Object> model) {
